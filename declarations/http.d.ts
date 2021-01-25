@@ -14,6 +14,25 @@ declare namespace http {
      *
      */
     function websocket(url: string, headers?: {[key:string]: string}): lWebSocket | [false, string];
+
+    function request(url: string, body?: string, headers?: {[key:string]: string}, binary?: boolean): void;
+
+    function request(request: {url: string, body?: string, headers?: {[key:string]: string}, binary?: boolean, method?: string, redirect?: boolean}): void;
+
+    function get(url: string, headers?: {[key:string]: string}, binary?: boolean): CCResponse | [null, string, CCResponse | null];
+
+    function get(request: {url: string, body?: string, headers?: {[key:string]: string}, binary?: boolean, method?: string, redirect?: boolean}): CCResponse | [null, string, CCResponse | null];
+
+    function post(url: string, body?: string, headers?: {[key:string]: string}, binary?: boolean): CCResponse | [null, string, CCResponse | null];
+
+    function post(request: {url: string, body?: string, headers?: {[key:string]: string}, binary?: boolean, method?: string, redirect?: boolean}): CCResponse | [null, string, CCResponse | null];
+
+    function checkURLAsync(url: string): true | [false, string];
+
+    function checkURL(url: string): true | [false, string];
+
+    function websocketAsync(url: string, headers?: {[key:string]: string}): void;
+
 }
 
 /** @noSelf **/
@@ -46,5 +65,13 @@ declare class lWebSocket {
      *     Close this websocket. This will terminate the connection, meaning messages can no longer be sent or received along it.
      */
     close(): void;
+
+}
+
+/** @noSelf **/
+declare class CCResponse extends FileHandle{
+    getResponseCode(): [number, string];
+
+    getResponseHeaders(): {[key: string]: string};
 
 }
