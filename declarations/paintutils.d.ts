@@ -5,13 +5,13 @@ declare namespace paintutils{
 
     function loadImage(path:string): ImageData | null;
 
-    function drawPixel(xPos:number, yPos:number, colour?:number): void;
+    function drawPixel(xPos:number, yPos:number, colour?:colors.ColorSet): void;
 
-    function drawLine(startX:number, startY:number, endX:number, endY:number, colour?:number): void;
+    function drawLine(startX:number, startY:number, endX:number, endY:number, colour?:colors.ColorSet): void;
 
-    function drawBox(startX:number, startY:number, endX: number, endY:number, colour?:number): void;
+    function drawBox(startX:number, startY:number, endX: number, endY:number, colour?:colors.ColorSet): void;
 
-    function drawFilledBox(startX:number, startY:number, endX:number, endY:number, colour?:number): void;
+    function drawFilledBox(startX:number, startY:number, endX:number, endY:number, colour?:colors.ColorSet): void;
 
     function drawImage(image: ImageData, xPos:number, yPos:number): void;
 }
