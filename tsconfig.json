@@ -15,5 +15,6 @@
     "main": "declarations/index.d.ts",
     "include":[
         "declarations/**/*.d.ts"
-    ]
+    ],
+    "tstl": {}
   }
