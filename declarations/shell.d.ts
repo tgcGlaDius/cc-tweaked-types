@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare class shell {
     /**
      * Run a program with the supplied arguments.

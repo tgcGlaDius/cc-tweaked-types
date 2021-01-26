@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace settings{
     type settingDetails = {description?: string, default?: any, type?: string, value?: any};
 

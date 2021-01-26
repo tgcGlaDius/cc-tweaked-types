@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace rednet{
     var CHANNEL_BROADCAST: 65535;
 

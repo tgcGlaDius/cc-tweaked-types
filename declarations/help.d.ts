@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace help{
     function path(): string;
 

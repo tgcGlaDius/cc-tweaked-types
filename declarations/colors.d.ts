@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace colors {
     /**
      * White: 1

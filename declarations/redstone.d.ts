@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace redstone{
     type Side = "top" | "bottom" | "left" | "right" | "front" | "back";
 

@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 interface VectorConstructor{
     new: (this:void, x:number, y:number, z:number) => Vector;
 }

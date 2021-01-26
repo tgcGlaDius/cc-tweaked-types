@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 /**
  * A position of the cursor on a screen relative to the top left.
  *

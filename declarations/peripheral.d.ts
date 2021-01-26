@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace peripheral{
     type wrappedPeripheral = object | commandPeripheral | computerPeripheral; //TODO: add specific peripheral wraps
 

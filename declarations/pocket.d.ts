@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace pocket{
     function equipBack(): [boolean, string | null];
 

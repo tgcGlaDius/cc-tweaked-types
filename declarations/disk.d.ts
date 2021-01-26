@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace disk{
     function isPresent(name:string): boolean;
 

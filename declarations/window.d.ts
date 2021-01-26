@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare namespace window{
     function create(parent: Redirect, nX: number, nY: number, nWidth: number, nHeight: number, bStartVisible?: boolean): Window;
 }

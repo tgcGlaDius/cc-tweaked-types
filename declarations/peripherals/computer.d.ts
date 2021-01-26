@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 declare class computerPeripheral{
     turnOn(): void;
 
