@@ -30,7 +30,7 @@ declare namespace os {
      */
     function unloadAPI(name: string):void
 
-    type OSEvent = any[]
+    type OSEvent = [event: string, ...args: any[]]
 
     /**
      * - Pause execution of the current thread and waits for any events matching
@@ -69,8 +69,7 @@ declare namespace os {
      * ```
      * @see os.pullEventRaw To pull the terminate event.
      */
-    function pullEvent(): [string, ...any[]]
-    function pullEvent(filter: string): [string, ...any[]]
+    function pullEvent(filter?: string): OSEvent
     function pullEvent(filter: "key"): [string, number, boolean]
     function pullEvent(filter: "mouse_click"): [event:"mouse_click", button: string, x: number, y: number]
     /** @return {[string, number]} event tuple */
@@ -98,7 +97,7 @@ declare namespace os {
      *
      * @see os.pullEvent To pull events normally.
      */
-    function pullEventRaw(filter?: string): any
+    function pullEventRaw(filter?: string): OSEvent
 
     /**
      * Pauses execution for the specified number of seconds, alias of @{_G.sleep}.
@@ -141,7 +140,7 @@ declare namespace os {
      * @see shell.run
      * @see loadfile
      */
-    function run(env:any, path:any, ...args:any[]):void
+    function run(env:any, path:any, ...args:any[]):boolean;
 
     /**
      * This is a phantom type that represents a spesific Timer though in reality it is just a number.
@@ -213,7 +212,7 @@ declare namespace os {
      * @param token The ID of the alarm to cancel.
      * @see #setAlarm To set an alarm.
      */
-    function cancelAlarm( token:number ):void
+    function cancelAlarm( token:AlarmToken ):void
 
     /**
      * Shuts down the computer immediately.
