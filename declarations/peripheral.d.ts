@@ -1,5 +1,5 @@
 declare namespace peripheral{
-    type wrappedPeripheral = object; //TODO: add specific peripheral wraps
+    type wrappedPeripheral = object | commandPeripheral | computerPeripheral; //TODO: add specific peripheral wraps
 
     function getNames(): string[];
 

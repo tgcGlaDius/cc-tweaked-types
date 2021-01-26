@@ -21,3 +21,6 @@ import './textutils'
 import './turtle'
 import './vector'
 import './window'
+
+import './peripherals/command'
+import './peripherals/computer'
