@@ -189,7 +189,7 @@ declare namespace turtle {
      * @return number The space left in in this slot.
      * @throws If the slot is out of range.
      */
-    function getItemCount(slot?: number): number
+    function getItemSpace(slot?: number): number
 
     /**
      * Check if there is a solid block in front of the turtle. In this case, solid refers to any non-air or liquid block.

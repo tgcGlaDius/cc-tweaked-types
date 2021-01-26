@@ -1,6 +1,26 @@
 /** @noSelfInFile */
 declare namespace textutils {
 
+    type empty_json_array = object;
+
+    type json_null = object;
+
+    function slowWrite(sText: string, nRate?: number): void;
+
+    function slowPrint(sText: string, nRate?: number): void;
+
+    function formatTime(nTime: number, bTwentyFourHour?: boolean): string;
+
+    function pagedPrint(_sText: string, _nFreeLines?: number): number;
+
+    function tabulate(... args: (colors.ColorSet | string[])[]): void;
+
+    function pagedTabulate(... args: (colors.ColorSet | string[])[]): void;
+
+    function serialize(t: object): string;
+
+    function unserialize(s: string): object | null;
+
     /**
      * Returns a JSON representation of the given data.
      *
@@ -34,7 +54,9 @@ declare namespace textutils {
      */
     function unserializeJSON(s: string, options? :{nbt_style?: boolean, parse_null?: boolean}): [any] | [null, string];
 
+    function urlEncode(str: string): string;
 
+    function complete(sSearchText: string, tSearchTable?: any): string[];
 
 }
 
