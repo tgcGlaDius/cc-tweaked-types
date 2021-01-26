@@ -1,5 +1,5 @@
 declare namespace pocket{
-    function equipBack(): true | (string | null);
+    function equipBack(): [boolean, string | null];
 
-    function unequipBack(): true | (string | null);
+    function unequipBack(): [boolean, string | null]
 }
