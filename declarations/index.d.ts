@@ -24,3 +24,6 @@ import './window'
 
 import './peripherals/command'
 import './peripherals/computer'
+import './peripherals/drive'
+import './peripherals/modem'
+import './peripherals/monitor'

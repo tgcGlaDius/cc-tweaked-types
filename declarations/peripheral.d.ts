@@ -1,6 +1,6 @@
 /** @noSelfInFile */
 declare namespace peripheral{
-    type wrappedPeripheral = object | commandPeripheral | computerPeripheral; //TODO: add specific peripheral wraps
+    type wrappedPeripheral = object | commandPeripheral | computerPeripheral | drivePeripheral | modemPeripheral | monitorPeripheral; //TODO: add specific peripheral wraps
 
     function getNames(): string[];
 
