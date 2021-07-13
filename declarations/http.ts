@@ -63,7 +63,7 @@ declare namespace http {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#v:websocket)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Http.websocket)
      */
-    function websocket(url: string, headers?: Headers): LuaMultiReturn<[ lWebSocket | false, string ]>;
+    function websocket(url: string, headers?: Headers): LuaMultiReturn<[ websocket: lWebSocket | false, errorMessage?: string ]>;
 
     /**
      * Asynchronously open a websocket.
@@ -132,7 +132,7 @@ declare class lWebSocket {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#ty:Websocket:receive)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Websocket.receive)
      */
-    receive(timeout?: number): LuaMultiReturn<[ string, boolean ]>;
+    receive(timeout?: number): LuaMultiReturn<[ message: string, binary: boolean ]>;
     receive(timeout?: number): LuaMultiReturn<[ null ]>;
 
     /**
