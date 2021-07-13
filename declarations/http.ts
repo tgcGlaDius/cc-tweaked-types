@@ -63,7 +63,7 @@ declare namespace http {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#v:websocket)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Http.websocket)
      */
-    function websocket(url: string, headers?: Headers): lWebSocket | [ false, string ];
+    function websocket(url: string, headers?: Headers): LuaMultiReturn<[ lWebSocket | false, string ]>;
 
     /**
      * Asynchronously open a websocket.
@@ -80,7 +80,7 @@ declare namespace http {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#v:websocketAsync)
      * @see [Out of Date] ComputerCraft Wiki (Blank Docs Page)
      */
-    function websocketAsync(url: string, headers?: Headers): true | [ false, string ];
+    function websocketAsync(url: string, headers?: Headers): LuaMultiReturn<[ boolean, string ]>;
 
     /**
      * Asynchronously make a HTTP request to the given url.
@@ -98,7 +98,7 @@ declare namespace http {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#v:request)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Http.request)
      */
-    function request(url: string, body?: string, headers?: Headers, binary?: boolean): true | [ false, string ];
+    function request(url: string, body?: string, headers?: Headers, binary?: boolean): LuaMultiReturn<[ boolean, string ]>;
 
     /**
      * Asynchronously make a HTTP request to the given url.
@@ -113,7 +113,7 @@ declare namespace http {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#v:request)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Http.request)
      */
-    function request(request: HttpRequest): true | [ false, string ];
+    function request(request: HttpRequest): LuaMultiReturn<[ boolean, string ]>;
 }
 
 /** @noSelf **/
@@ -132,7 +132,8 @@ declare class lWebSocket {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/http.html#ty:Websocket:receive)
      * @see [[Out of Date] ComputerCraft Wiki](https://wiki.computercraft.cc/Websocket.receive)
      */
-    receive(timeout?: number): [string, boolean] | null;
+    receive(timeout?: number): LuaMultiReturn<[ string, boolean ]>;
+    receive(timeout?: number): LuaMultiReturn<[ null ]>;
 
     /**
      * Send a websocket message to the connected server.

@@ -16,7 +16,7 @@ declare class Handle {
      */
     flush(this: Handle): true
 
-    lines(this: Handle, ...args: any[]): LuaIterator<string>
+    lines(this: Handle, ...args: any[]): LuaIterable<string>
 
     read(this: Handle, ...args: any[]): string | null
 
@@ -126,7 +126,7 @@ declare namespace io {
      * @see Handle:lines
      * @see io.input
      */
-    function lines(filename: string, ...readArgs: any[]): LuaIterator<string>
+    function lines(filename: string, ...readArgs: any[]): LuaIterable<string>
 
     /**
      * Open a file with the given mode, either returning a new file handle or `null`, plus an error message.
