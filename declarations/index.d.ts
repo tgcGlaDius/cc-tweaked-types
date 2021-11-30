@@ -27,3 +27,8 @@ import './peripherals/computer';
 import './peripherals/drive';
 import './peripherals/modem';
 import './peripherals/monitor';
+import './peripherals/printer';
+import './peripherals/speaker';
+import './peripherals/generic/energy_storage';
+import './peripherals/generic/fluid_storage';
+import './peripherals/generic/item_storage';
