@@ -117,10 +117,10 @@ declare function printError(...args: any[]): void;
     ]]
     */
 declare function read(
-	replaceChar: any,
-	history: any,
-	completeFn: any,
-	defaultValue: string
+	replaceChar?: string,
+	history?: string[],
+	completeFn?: (partial: string) => string[],
+	defaultValue?: string
 ): void;
 
 /**
