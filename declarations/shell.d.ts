@@ -1,5 +1,7 @@
 /** @noSelfInFile */
-declare class shell {
+
+declare const shell: Shell;
+declare class Shell {
 	/**
 	 * Run a program with the supplied arguments.
 	 * ________________________
@@ -276,7 +278,7 @@ declare class shell {
 }
 
 type CompletionFunction = (
-	shell: shell,
+	shell: Shell,
 	index: number,
 	argument: string,
 	previous: string[]

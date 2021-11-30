@@ -121,7 +121,7 @@ declare function read(
 	history?: string[],
 	completeFn?: (partial: string) => string[],
 	defaultValue?: string
-): void;
+): string;
 
 /**
     --- The ComputerCraft and Minecraft version of the current computer environment.
