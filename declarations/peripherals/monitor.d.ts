@@ -1,40 +1,40 @@
 /** @noSelfInFile */
-declare class monitorPeripheral extends Redirect{
-    setTextScale(scale:number): void;
+declare class monitorPeripheral extends Redirect {
+	setTextScale(scale: number): void;
 
-    getTextScale(): number;
+	getTextScale(): number;
 
-    write(text:string): void;
+	write(text: string): void;
 
-    scroll(y: number): void;
+	scroll(y: number): void;
 
-    getCursorPos(): [x: number, y: number];
+	getCursorPos(): LuaMultiReturn<[x: number, y: number]>;
 
-    setCursorPos( x: number, y: number): void;
+	setCursorPos(x: number, y: number): void;
 
-    getCursorBlink(): boolean;
+	getCursorBlink(): boolean;
 
-    setCursorBlink(blink:boolean): void;
+	setCursorBlink(blink: boolean): void;
 
-    getSize(): [width: number, height: number];
+	getSize(): LuaMultiReturn<[width: number, height: number]>;
 
-    clear(): void;
+	clear(): void;
 
-    clearLine(): void;
+	clearLine(): void;
 
-    getTextColour(): colors.ColorSet;
+	getTextColour(): colors.ColorSet;
 
-    setTextColour(colour:colors.ColorSet): void;
+	setTextColour(colour: colors.ColorSet): void;
 
-    getBackgroundColour(): colors.ColorSet;
+	getBackgroundColour(): colors.ColorSet;
 
-    setBackgroundColour(colour:colors.ColorSet): void;
+	setBackgroundColour(colour: colors.ColorSet): void;
 
-    isColour(): boolean;
+	isColour(): boolean;
 
-    blit( text: string, textColour: string, backgroundColour: string): void;
+	blit(text: string, textColour: string, backgroundColour: string): void;
 
-    setPaletteColour(index: number, colour: number): void;
+	setPaletteColour(index: number, colour: number): void;
 
-    getPaletteColour(colour: number): colors.UnpackedRGB;
+	getPaletteColour(colour: number): colors.UnpackedRGB;
 }

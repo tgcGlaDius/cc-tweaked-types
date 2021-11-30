@@ -1,8 +1,8 @@
 /** @noSelfInFile */
-declare class commandPeripheral{
-    getCommand(): string;
+declare class commandPeripheral {
+	getCommand(): string;
 
-    setCommand(command: string): void;
+	setCommand(command: string): void;
 
-    runCommand(): [boolean, string | null];
+	runCommand(): LuaMultiReturn<[boolean, string | null]>;
 }

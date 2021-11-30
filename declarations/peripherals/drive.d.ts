@@ -1,24 +1,24 @@
 /** @noSelfInFile */
-declare class drivePeripheral{
-    isDiskPresent(): boolean;
+declare class drivePeripheral {
+	isDiskPresent(): boolean;
 
-    getDiskLabel(): string | null;
+	getDiskLabel(): string | null;
 
-    setDiskLabel(label?: string): string | null;
+	setDiskLabel(label?: string): string | null;
 
-    hasData(): boolean;
+	hasData(): boolean;
 
-    getMountPath(): string | null;
+	getMountPath(): string | null;
 
-    hasAudio(): boolean;
+	hasAudio(): boolean;
 
-    getAudioTitle(): string | null | false;
+	getAudioTitle(): string | null | false;
 
-    playAudio(): void;
+	playAudio(): void;
 
-    stopAudio(): void;
+	stopAudio(): void;
 
-    ejectDisk(): void;
+	ejectDisk(): void;
 
-    getDiskID(): number | null;
+	getDiskID(): number | null;
 }

@@ -1,20 +1,33 @@
 /** @noSelfInFile */
-declare namespace peripheral{
-    type wrappedPeripheral = object | commandPeripheral | computerPeripheral | drivePeripheral | modemPeripheral | monitorPeripheral; //TODO: add specific peripheral wraps
+declare namespace peripheral {
+	type wrappedPeripheral =
+		| commandPeripheral
+		| computerPeripheral
+		| drivePeripheral
+		| modemPeripheral
+		| monitorPeripheral
+		| printerPeripheral
+		| speakerPeripheral
+		| energyStoragePeripheral
+		| fluidStoragePeripheral
+		| itemStoragePeripheral;
 
-    function getNames(): string[];
+	function getNames(): string[];
 
-    function isPresent(name: string): boolean;
+	function isPresent(name: string): boolean;
 
-    function getType(peripheral:string|wrappedPeripheral): string | null;
+	function getType(peripheral: string | wrappedPeripheral): string | null;
 
-    function getMethods(name:string): string[];
+	function getMethods(name: string): string[];
 
-    function getName(peripheral:wrappedPeripheral): string;
+	function getName(peripheral: wrappedPeripheral): string;
 
-    function call(name:string, method:string, ...args:any[]): [...any[]];
+	function call(name: string, method: string, ...args: any[]): [...any[]];
 
-    function wrap(name:string): wrappedPeripheral;
+	function wrap(name: string): wrappedPeripheral;
 
-    function find(type:string, filter:((name:string, wrapped:wrappedPeripheral)=>boolean)): wrappedPeripheral[];
+	function find(
+		type: string,
+		filter: (name: string, wrapped: wrappedPeripheral) => boolean
+	): wrappedPeripheral[];
 }
