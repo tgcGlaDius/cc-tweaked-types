@@ -74,7 +74,7 @@ declare namespace fs {
 		mode: string
 	): LuaMultiReturn<[FileHandle] | [null, string | null]>;
 }
-
+/** @noSelf */
 declare class FileHandle {
 	/**
 	 * Read a line from the file.
