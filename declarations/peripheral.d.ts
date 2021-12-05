@@ -29,5 +29,5 @@ declare namespace peripheral {
 	function find(
 		type: string,
 		filter: (name: string, wrapped: wrappedPeripheral) => boolean
-	): wrappedPeripheral[];
+	): LuaMultiReturn<wrappedPeripheral[]>;
 }
