@@ -1,6 +1,7 @@
 /** @noSelfInFile */
 
 declare const shell: Shell;
+/** @noSelf */
 declare class Shell {
 	/**
 	 * Run a program with the supplied arguments.
