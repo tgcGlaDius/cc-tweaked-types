@@ -74,7 +74,6 @@ declare namespace rednet {
     
     /** Wait for a rednet message to be received, or until `nTimeout` seconds have elapsed.
      *
-     * @tupleReturn
      * @param sProtocolFilter The protocol the received message must be sent with. If specified, any messages not sent under this protocol will be discarded.
      * @param nTimeout The number of seconds to wait if no message is received.
      * @return[1] `number` The computer which sent this message

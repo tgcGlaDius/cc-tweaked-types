@@ -67,12 +67,11 @@ declare namespace fs {
      * @param mode string The mode to open the file with.
      * @return FileHandle A file handle object for the file.
      * or
-     * @tupleReturn
      * @return[1] nil If the file does not exist, or cannot be opened.
      * @return[2] string | nil A message explaining why the file cannot be opened.
      * @throws If an invalid mode was specified.
      */
-    function open(path: string, mode: string): [FileHandle] | [null, string | null];
+    function open(path: string, mode: string): LuaMultiReturn<[FileHandle] | [null, string | null]>;
 
 }
 

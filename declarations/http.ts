@@ -56,7 +56,6 @@ declare namespace http {
      * @param headers? { [string] = string } Additional headers to send as part of the initial websocket connection.
      * @return Websocket The websocket connection.
      * or
-     * @tupleReturn
      * @return[1] false If the websocket connection failed.
      * @return[2] string An error message describing why the connection failed.
      * 
@@ -73,7 +72,6 @@ declare namespace http {
      * @param headers? { [string] = string } Additional headers to send as part of the initial websocket connection.
      * @return Returns true if websockets are enabled and the max amount of websocket connections has not been reached
      * or
-     * @tupleReturn
      * @return[1] false If the websocket connection failed.
      * @return[2] string An error message describing why the connection failed.
      * 
@@ -91,7 +89,6 @@ declare namespace http {
      * @param binary Whether to make a binary HTTP request. If true, the body will not be UTF-8 encoded, and the received response will not be decoded.
      * @return Returns true if http is enabled and the method is supported
      * or
-     * @tupleReturn
      * @return[1] false If the http request failed.
      * @return[2] string An error message describing why the request failed.
      * 
@@ -106,7 +103,6 @@ declare namespace http {
      * @param request Options for the request.
      * @return Returns true if http is enabled and the method is supported
      * or
-     * @tupleReturn
      * @return[1] false If the http request failed.
      * @return[2] string An error message describing why the request failed.
      * 
@@ -124,7 +120,6 @@ declare class lWebSocket {
      * @param timeout? number The number of seconds to wait if no message is received.
      * @return nil If the websocket was closed while waiting, or if we timed out.
      * or
-     * @tupleReturn
      * @return[1] string The received message.
      * @return[2] boolean If this was a binary message.
      * @throws If the websocket has been closed

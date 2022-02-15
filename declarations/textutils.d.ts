@@ -28,7 +28,6 @@ declare namespace textutils {
      *          parse_null: When true, null will be parsed as json_null, rather than nil.
      * @return The deserialised object
      * or
-     * @tupleReturn
      * @return[1] nil If the object could not be deserialised.
      * @return[2] string A message describing why the JSON string is invalid.
      */

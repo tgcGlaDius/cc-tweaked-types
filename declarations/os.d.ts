@@ -49,7 +49,6 @@ declare namespace os {
      * event, printing the error "Terminated".
      *
      * @param[opt] string filter Event to filter for.
-     * @tupleReturn
      * @return string event The name of the event that fired.
      * @return any param... Optional additional parameters of the event.
      * @usage Listen for `mouse_click` events.
