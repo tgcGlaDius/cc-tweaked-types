@@ -76,8 +76,8 @@ declare namespace os {
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:pullEvent)
      * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.pullEvent)
      */
-    function pullEvent(): [string, ...any[]]
-    function pullEvent(filter: string): [string, ...any[]]
+    function pullEvent(): LuaMultiReturn<[string, ...any[]]>
+    function pullEvent(filter: string): LuaMultiReturn<[string, ...any[]]>
     /**
      * Fired when text is typed on the keyboard
      * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:pullEvent)
@@ -283,13 +283,13 @@ declare namespace os {
 
     namespace Events {
         type AnyEvent = AnonymiseEvent | CharEvent | MouseClickEvent | AlarmEvent
-        type AnonymiseEvent = [string, ...any[]]
+        type AnonymiseEvent = LuaMultiReturn<[string, ...any[]]>
         /**
          * Fired when text is typed on the keyboard
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(Char_event)](https://www.computercraft.info/wiki/Char_(event))
          */
-        type CharEvent = [event: "char", letter: string]
+        type CharEvent = LuaMultiReturn<[event: "char", letter: string]>
         /**
          * Fired when a key is pressed on the keyboard
          * @tuple[1] event {string} the letter typed
@@ -297,35 +297,35 @@ declare namespace os {
          * @tuple[3] is being held
          * @see [ComputerCraft Wiki(Char_event)](https://www.computercraft.info/wiki/Key_(event))
          */
-        type KeyEvent = [event: "key", keycode: number, held: boolean]
+        type KeyEvent = LuaMultiReturn<[event: "key", keycode: number, held: boolean]>
         /**
          * Fired when a key is released 
          * @tuple[1] event {string} the letter typed
          * @tuple[2] keycode {number}
          * @see [ComputerCraft Wiki(Key_up_event)](https://www.computercraft.info/wiki/Key_up_(event))
          */
-        type KeyUpEvent = [event: "keyup", keycode: number]
+        type KeyUpEvent = LuaMultiReturn<[event: "keyup", keycode: number]>
         /**
          * Fired when Ctrl + V is pressed on the keyboard
          * @tuple[1] event {string} the letter typed
          * @tuple[2] text {string} system clipboard text
          * @see [ComputerCraft Wiki(Paste_event)](https://www.computercraft.info/wiki/Paste_(event))
          */
-        type PasteEvent = [event: "paste", text: string]
+        type PasteEvent = LuaMultiReturn<[event: "paste", text: string]>
         /**
          * Fired when a timeout started by [os.startTimer()](https://tweaked.cc/module/os.html#v:startTimer) completes 
          * @tuple[1] event {string} The letter typed
          * @tuple[2] timer {TimerToken} Value of the timer as returned by os.startTimer()
          * @see [ComputerCraft Wiki(Timer_event)](https://www.computercraft.info/wiki/Timer_(event))
          */
-        type TimerEvent = [event: "timer", timer: TimerToken]
+        type TimerEvent = LuaMultiReturn<[event: "timer", timer: TimerToken]>
         /**
          * Fired when a time passed to os.setAlarm() is reached 
          * @tuple[1] event {string} the letter typed
          * @tuple[2] timer {TimerToken} Value of the alarm as returned by os.setAlarm()
          * @see [ComputerCraft Wiki(Alarm_event)](https://www.computercraft.info/wiki/Alarm_(event))
          */
-        type AlarmEvent = [event: "alarm", timer: TimerToken]
+        type AlarmEvent = LuaMultiReturn<[event: "alarm", timer: TimerToken]>
         /**
          * Fired when an asynchronous task completes.
          * __________________________________________
@@ -341,13 +341,13 @@ declare namespace os {
          * @tuple[...] param1, param2, param3, param4
          * @see [ComputerCraft Wiki(Task_complete_event)](https://www.computercraft.info/wiki/Task_complete_(event))
          */
-        type TaskCompleteEvent = [event: "task_complete", taskID: number, success: boolean, error: string|null, ...args: any[]]
+        type TaskCompleteEvent = LuaMultiReturn<[event: "task_complete", taskID: number, success: boolean, error: string|null, ...args: any[]]>
         /**
          * Fired when the state of any of the redstone inputs change 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(Redstone_event)](https://www.computercraft.info/wiki/Redstone_(event))
          */
-        type RedstoneEvent = [event: "redstone"]
+        type RedstoneEvent = LuaMultiReturn<[event: "redstone"]>
         /**
          * Fired when a combination of keys CTRL and T is pressed and held for three seconds.
          * 
@@ -355,35 +355,35 @@ declare namespace os {
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(Terminate_event)](https://www.computercraft.info/wiki/Terminate_(event))
          */
-        type TerminateEvent = [event: "terminate"]
+        type TerminateEvent = LuaMultiReturn<[event: "terminate"]>
         /**
          * Fired when a disk is inserted into an adjacent disk drive 
          * @tuple[1] event {string} the letter typed
          * @tuple[2] side {string} the side of the computer that the peripheral generating the event is connected
          * @see [ComputerCraft Wiki(Disk_event)](https://www.computercraft.info/wiki/Disk_(event))
          */
-        type DiskEvent = [event: "disk", side: ComputerSide]
+        type DiskEvent = LuaMultiReturn<[event: "disk", side: ComputerSide]>
         /**
          * Fired when a disk is removed from an adjacent disk drive
          * @tuple[1] event {string} the letter typed
          * @tuple[2] side {string} the side of the computer that the peripheral generating the event is connected
          * @see [ComputerCraft Wiki(Disk_eject_event)](https://www.computercraft.info/wiki/Disk_eject_(event))
          */
-        type DiskEjectEvent = [event: "disk_eject", side: ComputerSide]
+        type DiskEjectEvent = LuaMultiReturn<[event: "disk_eject", side: ComputerSide]>
         /**
          * Fired when peripheral is attached 
          * @tuple[1] event {string} the letter typed
          * @tuple[2] side {string} the side of the computer that the peripheral generating the event is connected
          * @see [ComputerCraft Wiki(Peripheral_event)](https://www.computercraft.info/wiki/Peripheral_(event))
          */
-        type PeripheralEvent = [event: "peripheral", side: ComputerSide]
+        type PeripheralEvent = LuaMultiReturn<[event: "peripheral", side: ComputerSide]>
         /**
          * Fired when peripheral is removed 
          * @tuple[1] event {string} the letter typed
          * @tuple[2] side {string} the side of the computer that the peripheral generating the event is connected
          * @see [ComputerCraft Wiki(Peripheral_detach_event)](https://www.computercraft.info/wiki/Peripheral_detach_(event))
          */
-        type PeripheralDetachEvent = [event: "peripheral_detach", side: ComputerSide]
+        type PeripheralDetachEvent = LuaMultiReturn<[event: "peripheral_detach", side: ComputerSide]>
         /**
          * Fired when a rednet message is received from the rednet API
          * @tuple[1] event {string} the letter typed
@@ -392,7 +392,7 @@ declare namespace os {
          * @tuple[4] distance {number} the distance the message traveled
          * @see [ComputerCraft Wiki(Rednet_message_event)](https://www.computercraft.info/wiki/Rednet_message_(event))
          */
-        type RednetMessageEvent = [event: "rednet_message", senderID: number, message: any, distance: number]
+        type RednetMessageEvent = LuaMultiReturn<[event: "rednet_message", senderID: number, message: any, distance: number]>
         /**
          * Fired when a wireless modem message is received from the wireless modem
          * @tuple[1] event {string} the letter typed
@@ -402,7 +402,7 @@ declare namespace os {
          * @tuple[5] distance {number} the distance the message traveled
          * @see [ComputerCraft Wiki(Modem_message_event)](https://www.computercraft.info/wiki/Modem_message_(event))
          */
-        type ModemMessageEvent = [event: "modem_message", side: ComputerSide, frequency: number, replyFrequency: number, message: any, distance: number]
+        type ModemMessageEvent = LuaMultiReturn<[event: "modem_message", side: ComputerSide, frequency: number, replyFrequency: number, message: any, distance: number]>
         /**
          * Fired when an attempt to receive text from / post text on a website is successful.
          * 
@@ -412,7 +412,7 @@ declare namespace os {
          * @tuple[3] html {string} the html text of the website
          * @see [ComputerCraft Wiki(Http_success_event)](https://www.computercraft.info/wiki/Http_success_(event))
          */
-        type HttpSuccessEvent = [event: "http_success", url: string, html:any]
+        type HttpSuccessEvent = LuaMultiReturn<[event: "http_success", url: string, html:any]>
         /**
          * Fired when an attempt to receive text from / post text on a website is unsuccessful
          * 
@@ -421,7 +421,7 @@ declare namespace os {
          * @tuple[2] url {string} the url of the website
          * @see [ComputerCraft Wiki(Http_failure_event)](https://www.computercraft.info/wiki/Http_failure_(event))
          */
-        type HttpFailureEvent = [event: "http_failure", url: string]
+        type HttpFailureEvent = LuaMultiReturn<[event: "http_failure", url: string]>
         /**
          * Fired when a mouse button is pressed 
          * @tuple[1] event {string} the letter typed
@@ -430,76 +430,76 @@ declare namespace os {
          * @tuple[4] y {number} y coordinate
          * @see [ComputerCraft Wiki(Mouse_click_event)](https://www.computercraft.info/wiki/Mouse_click_(event))
          */
-        type MouseClickEvent = [event:"mouse_click", button: number, x: number, y: number]
+        type MouseClickEvent = LuaMultiReturn<[event:"mouse_click", button: number, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type MouseUpEvent = [event: "mouse_up", button: number, x: number, y: number]
+        type MouseUpEvent = LuaMultiReturn<[event: "mouse_up", button: number, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type MouseScrollEvent = [event: "mouse_scroll", scroll: number, x: number, y: number]
+        type MouseScrollEvent = LuaMultiReturn<[event: "mouse_scroll", scroll: number, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type MouseDragEvent = [event: "mouse_drag", button: number, x: number, y: number]
+        type MouseDragEvent = LuaMultiReturn<[event: "mouse_drag", button: number, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type MouseTouchEvent = [event: "mouse_touch", button: number, x: number, y: number]
+        type MouseTouchEvent = LuaMultiReturn<[event: "mouse_touch", button: number, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type MonitorResizeEvent = [event: "monitor_resize", side: ComputerSide, x: number, y: number]
+        type MonitorResizeEvent = LuaMultiReturn<[event: "monitor_resize", side: ComputerSide, x: number, y: number]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type TermResizeEvent = [event: "term_resize"]
+        type TermResizeEvent = LuaMultiReturn<[event: "term_resize"]>
         /**
          * 
          * @tuple[1] event {string} the letter typed
          * @see [ComputerCraft Wiki(event)]()
          */
-        type TurtleInventoryEvent = [event: "turtle_inventory"]
+        type TurtleInventoryEvent = LuaMultiReturn<[event: "turtle_inventory"]>
         /**
          * 
          * @tuple[1] event {string} The URL of the WebSocket that was closed.
          * @see [CC Tweaked](https://tweaked.cc/event/websocket_closed.html)
          */
-        type WebsocketClosedEvent = [event: "websocket_closed", url: string]
+        type WebsocketClosedEvent = LuaMultiReturn<[event: "websocket_closed", url: string]>
         /**
          * 
          * @tuple[1] event {string} The URL of the site requested.
          * @tuple[2] event {string} An error describing the failure.
          * @see [CC Tweaked](https://tweaked.cc/event/websocket_failure.html)
          */
-        type WebsocketFailureEvent = [event: "websocket_failure", url: string, error: string]
+        type WebsocketFailureEvent = LuaMultiReturn<[event: "websocket_failure", url: string, error: string]>
         /**
          * 
          * @tuple[1] event {string} The URL of the WebSocket.
          * @tuple[2] event {string} The contents of the message.
          * @see [CC Tweaked](https://tweaked.cc/event/websocket_message.html)
          */
-        type WebsocketMessageEvent = [event: "websocket_message", url: string, message: string]
+        type WebsocketMessageEvent = LuaMultiReturn<[event: "websocket_message", url: string, message: string]>
         /**
          * 
          * @tuple[1] event {string} The URL of the site.
          * @tuple[2] event {lWebSocket} The handle for the WebSocket.
          * @see [CC Tweaked](https://tweaked.cc/event/websocket_success.html)
          */
-        type WebsocketSuccessEvent = [event: "websocket_success", url: string, websocket: lWebSocket]
+        type WebsocketSuccessEvent = LuaMultiReturn<[event: "websocket_success", url: string, websocket: lWebSocket]>
     }
 
     /**
