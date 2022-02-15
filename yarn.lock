@@ -181,12 +181,10 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-lua-types@^2.8.0:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/lua-types/-/lua-types-2.10.1.tgz#e8d0c63bd5ab72351a30afd3b6b08319aca074a3"
-  integrity sha512-Ai7L25I5kHZYGN5C3LALUse7Eus0k/kM9tEO2zwReG2Xuker0c+0e2M4iyfiEvlGOmBc7cDouqJ5lFwyg8JqiQ==
-  dependencies:
-    typescript-to-lua "^0.39.0"
+lua-types@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/lua-types/-/lua-types-2.11.0.tgz#f4ecdc1eb9914a8af996f4aeb51a0e32284e5058"
+  integrity sha512-J/8qHrOjkZuPBDhnuAg0DWoaJEImqXNzgEnUigCTVrSVCcchM5Y5zpcI3aWAZPhuZlb0QKC/f3nc7VGmZmBg7w==
 
 minimatch@^3.0.4:
   version "3.0.4"
@@ -290,29 +288,19 @@ tsutils@^2.29.0:
   dependencies:
     tslib "^1.8.1"
 
-typescript-to-lua@^0.39.0:
-  version "0.39.6"
-  resolved "https://registry.yarnpkg.com/typescript-to-lua/-/typescript-to-lua-0.39.6.tgz#c9a3ef2bf8a8367bb5961d18c6831c71222fc601"
-  integrity sha512-Yq+XsmFKknMlz9jm1FvTw5B7R4H8lYUly4uwxlR44aT4OFyG9S7mOImrTIF07j414PdrJSQ5dAAhQOBVRqHbMw==
-  dependencies:
-    resolve "^1.15.1"
-    source-map "^0.7.3"
-    typescript "~4.3.2"
-
-typescript-to-lua@^0.41.0:
-  version "0.41.0"
-  resolved "https://registry.yarnpkg.com/typescript-to-lua/-/typescript-to-lua-0.41.0.tgz#3b53f9d28f06dac5c4ff02b9dd57ad8095f25c8a"
-  integrity sha512-FCH0QVj8ls7zHfP3buXHRSLPrFnul+7O5O9s+myV4yTgWuOmSxSltz7T3mS/RHs1+Vd+xC0WP+7vCURbNKNwsg==
+typescript-to-lua@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/typescript-to-lua/-/typescript-to-lua-1.3.3.tgz#c9fd04ffb2f39cc45997b9862a6cacfb45cb865d"
+  integrity sha512-Fkt0+dLufN5CK0G/qpINY7Sb0+SNmWpov+PHhO/dq0HFoNBzR47M1SJd+hQbG92vTVFLBO4f+Np29LuVvoemMA==
   dependencies:
     enhanced-resolve "^5.8.2"
     resolve "^1.15.1"
     source-map "^0.7.3"
-    typescript "~4.3.2"
 
-typescript@^4.1.3, typescript@~4.3.2:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
-  integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
+typescript@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 wrappy@1:
   version "1.0.2"
