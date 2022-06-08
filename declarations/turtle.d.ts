@@ -299,7 +299,7 @@ declare namespace turtle {
 	 * ______________________________________________________________________________________________________________
 	 * @return number remaining fuel
 	 */
-	function refuel(count?: number): number;
+	function refuel(count?: number): LuaMultiReturn<[boolean, string | null]>;
 
 	/**
 	 * @return any
