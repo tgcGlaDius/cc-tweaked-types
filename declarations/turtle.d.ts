@@ -358,7 +358,7 @@ declare namespace turtle {
 	 * @return[1] boolean Whether there is a block in front of the turtle.
 	 * @return[2] any | string Information about the block in front, or a message explaining that there is no block.
 	 */
-	function inspect(): [boolean, string | any];
+	function inspect(): LuaMultiReturn<[boolean, string | null]>;
 
 	/**
 	 * Get information about the block above the turtle.
@@ -366,7 +366,7 @@ declare namespace turtle {
 	 * @return[1] boolean Whether there is a block above the turtle.
 	 * @return[2] any | string Information about the block above, or a message explaining that there is no block.
 	 */
-	function inspectUp(): [boolean, string | any];
+	function inspectUp(): LuaMultiReturn<[boolean, string | null]>;
 
 	/**
 	 * Get information about the block below the turtle.
@@ -374,7 +374,7 @@ declare namespace turtle {
 	 * @return[1] boolean Whether there is a block below the turtle.
 	 * @return[2] any | string Information about the block below, or a message explaining that there is no block.
 	 */
-	function inspectDown(): [boolean, string | any];
+	function inspectDown(): LuaMultiReturn<[boolean, string | null]>;
 
 	/**
 	 * Get information about the block below the turtle.
