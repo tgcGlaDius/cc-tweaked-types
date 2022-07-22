@@ -53,7 +53,7 @@ declare namespace textutils {
 	function unserializeJSON(
 		s: string,
 		options?: { nbt_style?: boolean; parse_null?: boolean }
-	): LuaMultiReturn<[any] | [null, string]>;
+	): LuaMultiReturn<[any | null, string]>;
 
 	function urlEncode(str: string): string;
 

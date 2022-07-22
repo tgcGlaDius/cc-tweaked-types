@@ -4,22 +4,25 @@
 type ComputerSide = 'top' | 'bottom' | 'left' | 'right' | 'front' | 'back';
 
 declare namespace os {
-	/**
-	 * - Loads the given API into the global environment.
-	 *
-	 * **Warning** This function is deprecated. Use of this function will pollute the
-	 * global table, use @{require} instead.
-	 *
-	 * This function loads and executes the file at the given path, and all global
-	 * variables and functions exported by it will by available through the use of
-	 * `myAPI.<function name>`, where `myAPI` is the base name of the API file.
-	 *
-	 * @tparam string path The path of the API to load.
-	 * @treturn boolean Whether or not the API was successfully loaded.
-	 *
-	 * @deprecated Use @{require}.
-	 */
-	function loadAPI(path: string): void;
+
+    /**
+     * - Loads the given API into the global environment.
+     *
+     * **Warning** This function is deprecated. Use of this function will pollute the
+     * global table, use @{require} instead.
+     *
+     * This function loads and executes the file at the given path, and all global
+     * variables and functions exported by it will by available through the use of
+     * `myAPI.<function name>`, where `myAPI` is the base name of the API file.
+     *
+     * @tparam string path The path of the API to load.
+     * @treturn boolean Whether or not the API was successfully loaded.
+     *
+     * @deprecated Use @{require}.
+     * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:loadAPI)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.loadAPI)
+     */
+    function loadAPI(path: string):void;
 
 	/**
 	 * --- Unloads an API which was loaded by @{os.loadAPI}.
@@ -28,7 +31,9 @@ declare namespace os {
 	 * --
 	 * -- @tparam string name The name of the API to unload.
 	 * -- @deprecated Use @{require}.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:unloadAPI)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.unloadAPI)
+     */
 	function unloadAPI(name: string): void;
 
 	type OSEvent = [event: string, ...args: any[]];
@@ -660,14 +665,18 @@ declare namespace os {
 	 *     end
 	 *
 	 * @see os.pullEvent To pull events normally.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:pullEventRaw)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.pullEventRaw)
+     */
 	function pullEventRaw(filter?: string): OSEvent;
 
 	/**
 	 * Pauses execution for the specified number of seconds, alias of @{_G.sleep}.
 	 *
 	 * @param seconds The number of seconds to sleep for, rounded up to the nearest multiple of 0.05.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:sleep)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.sleep)
+     */
 	function sleep(seconds: number): void;
 
 	/**
@@ -703,7 +712,9 @@ declare namespace os {
 	 *
 	 * @see shell.run
 	 * @see loadfile
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:run)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.run)
+     */
 	function run(env: any, path: any, ...args: any[]): boolean;
 
 	/**
@@ -726,7 +737,9 @@ declare namespace os {
 	 *   {@code timer} event, or {@link #cancelTimer cancel the timer}.
 	 * @throws LuaException If the time is below zero.
 	 * @see #cancelTimer To cancel a timer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:startTimer)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.startTimer)
+     */
 	function startTimer(seconds: number): TimerToken;
 
 	/**
@@ -738,7 +751,9 @@ declare namespace os {
 	 * @cc.tparam string name The name of the event to queue.
 	 * @cc.param ... The parameters of the event.
 	 * @cc.see os.pullEvent To pull the event queued
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:queueEvent)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.queueEvent)
+     */
 	function queueEvent(name: string, ...args: any[]): void;
 
 	/**
@@ -747,7 +762,9 @@ declare namespace os {
 	 *
 	 * @param token The ID of the timer to cancel.
 	 * @see #startTimer To start a timer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:cancelTimer)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.cancelTimer)
+     */
 	function cancelTimer(token: TimerToken): void;
 
 	/**
@@ -766,7 +783,24 @@ declare namespace os {
 	 *   {@code alarm} event, or {@link #cancelAlarm cancel the alarm}.
 	 * @throws LuaException If the time is out of range.
 	 * @see #cancelAlarm To cancel an alarm.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:setAlarm)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.setAlarm)
+     * @usage
+     * The basic usage of **os.setAlarm** From a [forum Post](https://www.computercraft.info/forums2/index.php?/topic/5599-ossetalarm/page__view__findpost__p__46168) by jag_e_nummer_ett.
+     * ```ts
+     * // Basic format
+     * os.setAlarm(time)
+     * // Will timeout when it's 18 o'clock in the world
+     * os.setAlarm(18.00)
+     * // Will timeout 2 (in-game) hours later
+     * os.setAlarm(os.time()+2)
+     * // Basic event layout
+     * let [ev,p1] = os.pullEvent("alarm")
+     * // Event output
+     * // > ev == "alarm": true
+     * // > p1: A table that acts like it's unique ID
+     * ```
+     */
 	function setAlarm(time: number): AlarmToken;
 
 	/**
@@ -775,17 +809,23 @@ declare namespace os {
 	 *
 	 * @param token The ID of the alarm to cancel.
 	 * @see #setAlarm To set an alarm.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:cancelAlarm)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.cancelAlarm)
+     */
 	function cancelAlarm(token: AlarmToken): void;
 
 	/**
 	 * Shuts down the computer immediately.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:shutdown)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.shutdown)
+     */
 	function shutdown(): void;
 
 	/**
 	 * Reboots the computer immediately.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:reboot)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.reboot)
+     */
 	function reboot(): void;
 
 	/**
@@ -798,14 +838,18 @@ declare namespace os {
 	 * Returns the ID of the computer.
 	 *
 	 * @return The ID of the computer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:getComputerID)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.getComputerID)
+     */
 	function getComputerID(): ComputerID;
 
 	/**
 	 * Returns the ID of the computer.
 	 *
 	 * @return The ID of the computer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:computerID)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.computerID)
+     */
 	function computerID(): ComputerID;
 
 	/**
@@ -813,7 +857,9 @@ declare namespace os {
 	 *
 	 * @return The label of the computer.
 	 * @cc.treturn string The label of the computer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:getComputerLabel)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.getComputerLabel)
+     */
 	function getComputerLabel(): string;
 
 	/**
@@ -821,14 +867,18 @@ declare namespace os {
 	 *
 	 * @return The label of the computer.
 	 * @cc.treturn string The label of the computer.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:computerLabel)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.computerLabel)
+     */
 	function computerLabel(): string;
 
 	/**
 	 * Set the label of this computer.
 	 *
 	 * @param label The new label. May be {@code null} in order to clear it.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:setComputerLabel)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.setComputerLabel)
+     */
 	function setComputerLabel(label?: string | null | undefined): void;
 
 	/**
@@ -841,7 +891,9 @@ declare namespace os {
 	 * Returns the number of seconds that the computer has been running.
 	 *
 	 * @return The computer's uptime.
-	 */
+	 * @see [CC: Tweaked Docs](https://tweaked.cc/module/os.html#v:clock)
+     * @see [[Out of Date] ComputerCraft Wiki](https://www.computercraft.info/wiki/Os.clock)
+     */
 	function clock(): Seconds;
 
 	// /**
