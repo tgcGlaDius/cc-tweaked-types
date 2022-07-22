@@ -128,32 +128,23 @@ declare class Redirect {
 	 */
 	clearLine(): void;
 
-	/**
-	 * Return the colour that new text will be written as.
-	 *
-	 * @return The current text colour.
-	 * @throws LuaException (hidden) If the terminal cannot be found.
-	 * @see colors For a list of colour constants, returned by this function.
-	 */
-	getTextColour(): number;
+    /**
+     * Return the colour that new text will be written as.
+     *
+     * @return The current text colour.
+     * @throws LuaException (hidden) If the terminal cannot be found.
+     * @see colors For a list of colour constants, returned by this function.
+     */
+    getTextColour(): colors.Color
 
-	/**
-	 * Return the color that new text will be written as.
-	 *
-	 * @return The current text color.
-	 * @throws LuaException (hidden) If the terminal cannot be found.
-	 * @see colors For a list of color constants, returned by this function.
-	 */
-	getTextColor(): number;
-
-	/**
-	 * Set the colour that new text will be written as.
-	 *
-	 * @param colourArg The new text colour.
-	 * @throws LuaException (hidden) If the terminal cannot be found.
-	 * @see colors For a list of colour constants.
-	 */
-	setTextColour(colourArg: number): void;
+    /**
+     * Return the color that new text will be written as.
+     *
+     * @return The current text color.
+     * @throws LuaException (hidden) If the terminal cannot be found.
+     * @see colors For a list of color constants, returned by this function.
+     */
+    getTextColor(): colors.Color
 
 	/**
 	 * Set the colour that new text will be written as.
@@ -162,27 +153,36 @@ declare class Redirect {
 	 * @throws LuaException (hidden) If the terminal cannot be found.
 	 * @see colors For a list of colour constants.
 	 */
-	setTextColor(colorArg: number): void;
+	setTextColour(colourArg: number| colors.Color ): void;
 
 	/**
-	 * Return the current background colour. This is used when {@link #write writing text} and {@link #clear clearing}
-	 * the terminal.
+	 * Set the colour that new text will be written as.
 	 *
-	 * @return The current background colour.
+	 * @param colourArg The new text colour.
 	 * @throws LuaException (hidden) If the terminal cannot be found.
-	 * @see colors For a list of colour constants, returned by this function.
+	 * @see colors For a list of colour constants.
 	 */
-	getBackgroundColour(): number;
+	setTextColor(colorArg: number| colors.Color ): void;
 
-	/**
-	 * Return the current background color. This is used when {@link #write writing text} and {@link #clear clearing}
-	 * the terminal.
-	 *
-	 * @return The current background color.
-	 * @throws LuaException (hidden) If the terminal cannot be found.
-	 * @see colors For a list of color constants, returned by this function.
-	 */
-	getBackgroundColor(): number;
+    /**
+     * Return the current background colour. This is used when {@link #write writing text} and {@link #clear clearing}
+     * the terminal.
+     *
+     * @return The current background colour.
+     * @throws LuaException (hidden) If the terminal cannot be found.
+     * @see colors For a list of colour constants, returned by this function.
+     */
+    getBackgroundColour(): colors.Color
+
+    /**
+     * Return the current background color. This is used when {@link #write writing text} and {@link #clear clearing}
+     * the terminal.
+     *
+     * @return The current background color.
+     * @throws LuaException (hidden) If the terminal cannot be found.
+     * @see colors For a list of color constants, returned by this function.
+     */
+    getBackgroundColor(): colors.Color
 
 	/**
 	 * Set the current background colour. This is used when {@link term.write |writing text} and {@link term.clear |clearing} the
@@ -192,7 +192,7 @@ declare class Redirect {
 	 * @throws LuaException (hidden) If the terminal cannot be found.
 	 * @see colors For a list of colour constants.
 	 */
-	setBackgroundColour(colourArg: colors.Color): void;
+	setBackgroundColour(colourArg: number | colors.Color): void;
 
 	/**
 	 * Set the current background colour. This is used when {@link term.write |writing text} and {@link term.clear |clearing} the
@@ -202,7 +202,7 @@ declare class Redirect {
 	 * @throws LuaException (hidden) If the terminal cannot be found.
 	 * @see colors For a list of colour constants.
 	 */
-	setBackgroundColor(colorArg: colors.Color): void;
+	setBackgroundColor(colorArg: number | colors.Color): void;
 
 	/**
 	 * Determine if this terminal supports colour.

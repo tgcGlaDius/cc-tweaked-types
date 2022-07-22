@@ -534,22 +534,22 @@ declare namespace colors {
 		]
 	>;
 
-	/**
-	 * Separate a hexadecimal RGB colour into its three constituent channels.
-	 * ______________________________________________________________________________________________________________
-	 *
-	 * @param color The combined hexadecimal colour.
-	 * @return number The red channel, will be between 0 and 1.
-	 * @return number The green channel, will be between 0 and 1.
-	 * @return number The blue channel, will be between 0 and 1.
-	 * @usage
-	 * ```lua
-	 * colors.unpackRGB(0xb23399)
-	 * => 0.7, 0.2, 0.6
-	 * ```
-	 * @see colors.packRGB
-	 */
-	function unpackRGB(color: Color | ColorSet): UnpackedRGB;
+    /**
+     * Separate a hexadecimal RGB colour into its three constituent channels.
+     * ______________________________________________________________________________________________________________
+     *
+     * @param color The combined hexadecimal colour.
+     * @return number The red channel, will be between 0 and 1.
+     * @return number The green channel, will be between 0 and 1.
+     * @return number The blue channel, will be between 0 and 1.
+     * @usage
+     * ```lua
+     * colors.unpackRGB(0xb23399)
+     * => 0.7, 0.2, 0.6
+     * ```
+     * @see colors.packRGB
+     */
+    function unpackRGB(color: Color | ColorSet): LuaMultiReturn<UnpackedRGB>;
 
 	/**
 	 * Either calls {@link colors.packRGB} or {@link colors.unpackRGB}, depending on how many arguments it receives.
