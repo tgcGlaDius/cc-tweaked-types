@@ -2,7 +2,6 @@
 	"name": "cc-tweaked-types",
 	"version": "0.1.0",
 	"description": "Typescript definitions for making code that can be transpiled to CC: Tweaked varient ComputerCraft Lua Code for computing in minecraft",
-	"main": "declarations/index.d.ts",
 	"scripts": {
 		"check": "tsc -p tsconfig.json --noEmit",
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +21,8 @@
 		"minecraft"
 	],
 	"types": "declarations/index.d.ts",
-	"author": "Eforen (Ariel Lothlorien)",
+  "files": ["declarations/**/*.d.ts"],
+  "author": "Eforen (Ariel Lothlorien)",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/Eforen/cc-tweaked-types/issues"

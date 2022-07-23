@@ -1,4 +1,6 @@
 /** @noSelfInFile */
+import ColorSet = colors.ColorSet;
+
 /**
  * A position of the cursor on a screen relative to the top left.
  *
@@ -135,7 +137,7 @@ declare class Redirect {
      * @throws LuaException (hidden) If the terminal cannot be found.
      * @see colors For a list of colour constants, returned by this function.
      */
-    getTextColour(): colors.Color
+    getTextColour(): ColorSet
 
     /**
      * Return the color that new text will be written as.
@@ -144,7 +146,7 @@ declare class Redirect {
      * @throws LuaException (hidden) If the terminal cannot be found.
      * @see colors For a list of color constants, returned by this function.
      */
-    getTextColor(): colors.Color
+    getTextColor(): ColorSet
 
 	/**
 	 * Set the colour that new text will be written as.
@@ -172,7 +174,7 @@ declare class Redirect {
      * @throws LuaException (hidden) If the terminal cannot be found.
      * @see colors For a list of colour constants, returned by this function.
      */
-    getBackgroundColour(): colors.Color
+    getBackgroundColour(): ColorSet
 
     /**
      * Return the current background color. This is used when {@link #write writing text} and {@link #clear clearing}
@@ -182,7 +184,7 @@ declare class Redirect {
      * @throws LuaException (hidden) If the terminal cannot be found.
      * @see colors For a list of color constants, returned by this function.
      */
-    getBackgroundColor(): colors.Color
+    getBackgroundColor(): ColorSet
 
 	/**
 	 * Set the current background colour. This is used when {@link term.write |writing text} and {@link term.clear |clearing} the
