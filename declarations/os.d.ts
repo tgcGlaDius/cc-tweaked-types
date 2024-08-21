@@ -965,20 +965,21 @@ declare namespace os {
 	//     }
 	// }
 
-	// /**
-	//  * Returns the number of milliseconds since an epoch depending on the locale.
-	//  *
-	//  * * If called with {@code ingame}, returns the number of milliseconds since the
-	//  *   world was created. This is the default.
-	//  * * If called with {@code utc}, returns the number of milliseconds since 1
-	//  *   January 1970 in the UTC timezone.
-	//  * * If called with {@code local}, returns the number of milliseconds since 1
-	//  *   January 1970 in the server's local timezone.
-	//  *
-	//  * @param args The locale to get the milliseconds for. Defaults to {@code ingame} if not set.
-	//  * @return The milliseconds since the epoch depending on the selected locale.
-	//  * @throws LuaException If an invalid locale is passed.
-	//  */
+	/**
+	 * Returns the number of milliseconds since an epoch depending on the locale.
+	 *
+	 * * If called with `ingame`, returns the number of milliseconds since the
+	 *   world was created. This is the default.
+	 * * If called with `utc`, returns the number of milliseconds since 1
+	 *   January 1970 in the UTC timezone.
+	 * * If called with `local`, returns the number of milliseconds since 1
+	 *   January 1970 in the server's local timezone.
+	 *
+	 * @param args The locale to get the milliseconds for. Defaults to `ingame` if not set.
+	 * @return The milliseconds since the epoch depending on the selected locale.
+	 * @throws LuaException If an invalid locale is passed.
+	 */
+	function epoch(args?: "ingame" | "utc" | "local"): number;
 	// @LuaFunction
 	// public final long epoch( Optional<String> args ) throws LuaException
 	// {
