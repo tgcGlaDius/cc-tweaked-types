@@ -147,4 +147,9 @@ declare const _HOST: string;
     */
 declare const _CC_DEFAULT_SETTINGS: string;
 
+/**
+ * the global table
+ */
+declare const _G: object;
+
 // }
