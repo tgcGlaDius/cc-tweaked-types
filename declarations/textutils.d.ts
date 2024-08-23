@@ -1,8 +1,8 @@
 /** @noSelfInFile */
 declare namespace textutils {
-	type empty_json_array = object;
+	const empty_json_array: any;
 
-	type json_null = object;
+	const json_null: any;
 
 	function slowWrite(sText: string, nRate?: number): void;
 
