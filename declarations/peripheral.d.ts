@@ -16,7 +16,7 @@ declare namespace peripheral {
 
 	function isPresent(name: string): boolean;
 
-	function getType(peripheral: string | wrappedPeripheral): string | null;
+	function getType(peripheral: string | wrappedPeripheral): string | string[] | null;
 
 	function getMethods(name: string): string[];
 
